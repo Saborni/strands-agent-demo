@@ -1,0 +1,5 @@
+.venv/*
+agent-infra/.terraform/*
+agent-infra/.terraform.lock.hcl
+agent-infra/terraform.tfstate
+agent-infra/terraform.tfstate.backup
