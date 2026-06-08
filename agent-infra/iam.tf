@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "logs:CreateLogGroup"
     ]
     resources = [
-      "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/aws/bedrock-agentcore/runtimes/*"
+      "arn:aws:logs:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/bedrock-agentcore/runtimes/*"
     ]
   }
 
@@ -41,7 +41,7 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "logs:DescribeLogGroups"
     ]
     resources = [
-      "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:*"
+      "arn:aws:logs:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:log-group:*"
     ]
   }
 
@@ -52,7 +52,7 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "logs:PutLogEvents"
     ]
     resources = [
-      "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:log-group:/aws/bedrock-agentcore/runtimes/*:log-stream:*"
+      "arn:aws:logs:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:log-group:/aws/bedrock-agentcore/runtimes/*:log-stream:*"
     ]
   }
 
@@ -94,8 +94,8 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "bedrock-agentcore:GetWorkloadAccessTokenForUserId"
     ]
     resources = [
-      "arn:aws:bedrock-agentcore:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:workload-identity-directory/default",
-      "arn:aws:bedrock-agentcore:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:workload-identity-directory/default/workload-identity/hosted_agent_4cgmg-*"
+      "arn:aws:bedrock-agentcore:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:workload-identity-directory/default",
+      "arn:aws:bedrock-agentcore:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:workload-identity-directory/default/workload-identity/hosted_agent_4cgmg-*"
     ]
   }
 
@@ -108,7 +108,7 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
     ]
     resources = [
       "arn:aws:bedrock:*::foundation-model/*",
-      "arn:aws:bedrock:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:*"
+      "arn:aws:bedrock:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:*"
     ]
   }
 
@@ -119,11 +119,11 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "elasticfilesystem:ClientMount",
       "elasticfilesystem:ClientWrite"
     ]
-    resources = ["arn:aws:elasticfilesystem:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:file-system/*"]
+    resources = ["arn:aws:elasticfilesystem:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:file-system/*"]
     condition {
       test     = "ArnLike"
       variable = "elasticfilesystem:AccessPointArn"
-      values   = ["arn:aws:elasticfilesystem:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:access-point/*"]
+      values   = ["arn:aws:elasticfilesystem:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:access-point/*"]
     }
   }
 
@@ -135,8 +135,8 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "elasticfilesystem:DescribeMountTargets"
     ]
     resources = [
-      "arn:aws:elasticfilesystem:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:file-system/*",
-      "arn:aws:elasticfilesystem:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:access-point/*"
+      "arn:aws:elasticfilesystem:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:file-system/*",
+      "arn:aws:elasticfilesystem:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:access-point/*"
     ]
   }
 
@@ -148,11 +148,11 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "s3files:ClientWrite",
       "s3files:ClientRootAccess"
     ]
-    resources = ["arn:aws:s3files:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:file-system/*"]
+    resources = ["arn:aws:s3files:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:file-system/*"]
     condition {
       test     = "ArnLike"
       variable = "s3files:AccessPointArn"
-      values   = ["arn:aws:s3files:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:file-system/*/access-point/*"]
+      values   = ["arn:aws:s3files:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:file-system/*/access-point/*"]
     }
   }
 
@@ -164,8 +164,8 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
       "s3files:ListMountTargets"
     ]
     resources = [
-      "arn:aws:s3files:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:file-system/*",
-      "arn:aws:s3files:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:file-system/*/access-point/*"
+      "arn:aws:s3files:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:file-system/*",
+      "arn:aws:s3files:${data.aws_region.current.region}:${data.aws_caller_identity.current.account_id}:file-system/*/access-point/*"
     ]
   }
 }
