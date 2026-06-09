@@ -2,6 +2,12 @@ data "aws_caller_identity" "current" {}
 
 data "aws_region" "current" {}
 
+resource "random_string" "suffix" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect  = "Allow"
@@ -171,7 +177,7 @@ data "aws_iam_policy_document" "agentcore_runtime_permissions" {
 }
 
 resource "aws_iam_role" "this" {
-  name               = "bedrock-agentcore-runtime-role"
+  name               = "bedrock-agentcore-runtime-role-${random_string.suffix.result}"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 

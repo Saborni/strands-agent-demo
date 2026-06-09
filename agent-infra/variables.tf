@@ -7,13 +7,13 @@ variable "aws_region" {
 variable "ecr_repository_name" {
   description = "Name of the ECR repository"
   type        = string
-  default     = "weatheragent"
+  default     = "common-agent"
 }
 
 variable "agent_name" {
   description = "Name of the AgentCore agent"
   type        = string
-  default     = "weatheragent"
+  default     = "common-agent"
 }
 
 variable "environment" {
