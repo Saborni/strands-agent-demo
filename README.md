@@ -11,7 +11,7 @@ An AI agent deployed on AWS Bedrock AgentCore that provides weather forecasts an
 
 ## Architecture
 
-![ArchDiag](./img/image.png)
+![ArchDiag](./img/image.jpg)
 
 This solution deploys an AI agent built with the Strands SDK, equipped with two capabilities: retrieving weather forecasts and fetching metal commodity rates. The agent leverages the "minimax.minimax-m2.5" Bedrock Foundation Model for natural language understanding and response generation.
 
