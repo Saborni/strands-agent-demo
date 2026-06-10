@@ -131,7 +131,7 @@ Invoke the runtime:
 aws bedrock-agentcore invoke-agent-runtime \
   --agent-runtime-id <runtime-id> \
   --session-id "test-session-$(date +%Y%m%d%H%M%S)-$(uuidgen | cut -c1-8)" \
-  --prompt "What's the weather forecast?" \
+  --prompt "What is the weather like in Boston today and price of Gold?" \
   --region eu-west-1
 ```
 OR execute the following test file -
