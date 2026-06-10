@@ -134,6 +134,43 @@ aws bedrock-agentcore invoke-agent-runtime \
   --prompt "What's the weather forecast?" \
   --region eu-west-1
 ```
+OR execute the following test file -
+```bash
+python3 test/test-bedrock-runtime.py
+```
+
+Response:
+
+```bash
+Agent Response: 
+
+Here's the current weather in Boston and the price of gold:
+
+## 🌤️ Boston Weather Today (June 10, 2026)
+
+**Today:**
+- **Conditions:** Partly Sunny
+- **High:** 89°F
+- **Wind:** 6-13 mph from the Southwest
+- **Precipitation chance:** 8%
+
+**Tonight:**
+- **Conditions:** Chance of showers and thunderstorms (40% chance)
+- **Low:** 68°F
+- **Wind:** 5-12 mph from the Southwest
+
+**Looking ahead:** The rest of the week sees typical summer weather with chances of afternoon thunderstorms, highs in the upper 80s, and lows in the mid-60s to near 70°F.
+
+---
+
+## 🥇 Gold Price
+
+| Metal | Price | Currency | Updated |
+|-------|-------|----------|---------|
+| Gold (XAU) | **$4,176.20** | USD | Just now |
+
+Gold is trading at $4,176.20 per ounce. This is a historically high price, reflecting ongoing economic uncertainty and inflation concerns that typically drive investors toward safe-haven assets like gold.
+```
 
 ## Logs
 
